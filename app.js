@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
+const postRoutes = require('./routes/index.js');
+
 const PORT = 3000;
-const postRoutes = require('./routes/post.routes');
 
 app.use(express.json());
 
