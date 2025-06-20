@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const postRoutes = require('./routes/index.js');
+const postRoutes = require('./routes/post.routes.js');
 
 const PORT = 3000;
 
