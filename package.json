@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/Minatti/blog-api#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "typee": "module"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
