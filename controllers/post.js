@@ -1,4 +1,4 @@
-const { criarPost } = require('../models/post.js');
+const { criarPost, listarPosts } = require('../models/post.js');
 
 // CRUD
 
@@ -19,7 +19,7 @@ const criarNovoPost = (req, res) => {
     }
 }
 // Read
-const listarPosts = (req, res) => {
+const listarTodosPosts = (req, res) => {
   try {
     const posts = listarPosts();
     res.status(200).json(posts);
@@ -31,5 +31,5 @@ const listarPosts = (req, res) => {
 
 module.exports = {
   criarNovoPost
-  ,listarPosts
+  ,listarTodosPosts
 };
