@@ -8,4 +8,7 @@ router.post('/', post.criarNovoPost);
 // Método HTTP get para listar os posts
 router.get('/', post.listarTodosPosts);
 
+// Método HTTP delete para excluir o post por ID
+router.delete('/:id', post.excluirPost);
+
 module.exports = router;

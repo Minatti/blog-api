@@ -43,7 +43,6 @@ const excluirPost = (req, res) => {
 };
 
 
-
 module.exports = {
   criarNovoPost
   ,listarTodosPosts
