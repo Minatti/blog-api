@@ -1,8 +1,8 @@
-const { criarPost, listarPosts } = require('../models/post.js');
+const { criarPost, listarPosts, deletarPost } = require('../models/post.js');
 
 // CRUD
 
-// Create
+// Criar
 const criarNovoPost = (req, res) => {
     const { titulo, conteudo, autor } = req.body;
 
@@ -18,7 +18,7 @@ const criarNovoPost = (req, res) => {
         res.status(500).json({ error: 'Erro interno ao criar post.' });
     }
 }
-// Read
+// Listar
 const listarTodosPosts = (req, res) => {
   try {
     const posts = listarPosts();
@@ -29,7 +29,23 @@ const listarTodosPosts = (req, res) => {
   }
 };
 
+
+// Atualizar
+
+// Deletar
+const excluirPost = (req, res) => {
+    const { id } = req.params;
+    const changes = deletarPost(id);
+
+    return changes > 0
+    ? res.status(200).json({ message: `Post ID ${id} excluido com sucesso.`})
+    : res.status(404).json({ error: 'Post não encontrado.'});
+};
+
+
+
 module.exports = {
   criarNovoPost
   ,listarTodosPosts
+  ,excluirPost
 };
