@@ -18,7 +18,18 @@ const criarNovoPost = (req, res) => {
         res.status(500).json({ error: 'Erro interno ao criar post.' });
     }
 }
+// Read
+const listarPosts = (req, res) => {
+  try {
+    const posts = listarPosts();
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error('Erro ao listar posts:', error.message);
+    res.status(500).json({ error: 'Erro ao recuperar posts.' });
+  }
+};
 
 module.exports = {
   criarNovoPost
+  ,listarPosts
 };
