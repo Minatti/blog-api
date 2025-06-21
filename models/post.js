@@ -22,8 +22,16 @@ const listarPosts = () => {
   return stmt.all();
 };
 
+const deletarPost = (id) => {
+  const stmt = db.prepare(`DELETE FROM posts WHERE id = ?`);
+  const info = stmt.run(id);
+  return info.changes; // retorna 1 se deletou, 0 se não encontrou
+};
+
 // Exportar função para uso no controller
 module.exports = {
   criarPost
   ,listarPosts
+  //atualizarPost
+  ,deletarPost
 };
