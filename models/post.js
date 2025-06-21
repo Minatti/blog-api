@@ -14,7 +14,7 @@ const criarPost = (titulo, conteudo, autor) => {
 }
 
 const listarPosts = () => {
-  const stmt = db.prepare('SELECT TOP 5 * FROM posts ORDER BY data_criacao DESC');
+  const stmt = db.prepare('SELECT *  FROM posts ORDER BY data_criacao DESC');
   return stmt.all();
 };
 
