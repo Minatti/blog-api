@@ -11,8 +11,7 @@ const createTableQuery = `
     titulo TEXT NOT NULL,
     conteudo TEXT NOT NULL,
     autor TEXT NOT NULL,
-    data_criacao TEXT NULL,
-    data_atualizacao TEXT NULL
+    data_criacao TEXT NULL
   )
 `;
 
