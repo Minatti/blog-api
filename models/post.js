@@ -1,6 +1,6 @@
 const db = require('../config/configDB');
 
-const criarPost = () => {
+const criarPost = (titulo, conteudo, autor) => {
     const now = new Date().toISOString();
     const stmt = db.prepare(`
     INSERT INTO posts (titulo, conteudo, autor, data_criacao)

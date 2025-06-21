@@ -11,7 +11,7 @@ const criarNovoPost = (req, res) => {
     }
 
     try {
-        const id = criarNovoPost(titulo, conteudo, autor);
+        const id = criarPost(titulo, conteudo, autor);
         res.status(201).json({ message: 'Post criado com sucesso!', id });
     } catch (error) {
         console.error('Erro ao criar post:', error.message);
