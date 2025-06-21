@@ -7,6 +7,6 @@ const postController = require('../controllers/post.controller.js');
 //   res.json({ message: 'Rota de postagens funcionando com sucesso! 🚀' });
 // });
 
-router.get('/', postController.getAllPosts);
+router.get('/', postController.listaTodosPosts);
 
 module.exports = router;

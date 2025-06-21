@@ -1,10 +1,19 @@
 const express = require('express');
 const app = express();
-const postRoutes = require('./routes/post.routes.js');
+const postRoutes = require('./routes/post.routes');
+const db = require('./config/configDB');
 
 const PORT = 3000;
 
 app.use(express.json());
+
+// Testando select no db
+try {
+  const posts = db.prepare('SELECT * FROM posts').all();
+  console.log('✅ Dados atuais na tabela "posts":', posts);
+} catch (error) {
+  console.error('❌ Erro ao conectar no banco de dados:', error.message);
+}
 
 app.get('/', (req, res) => {
     res.send('Hello my friend! API Rodando...')

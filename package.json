@@ -2,7 +2,7 @@
   "name": "blog-api",
   "version": "1.0.0",
   "description": "Projeto acadêmico criando uma API do absoluto zero",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/Minatti/blog-api#readme",
   "dependencies": {
-    "express": "^5.1.0",
-    "typee": "module"
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
