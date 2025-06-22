@@ -1,6 +1,5 @@
-const { criarPost, listarPosts, deletarPost } = require('../models/post.js');
+const { criarPost, listarPosts, atualizarPost, deletarPost } = require('../models/post.js');
 
-// CRUD
 
 // Criar
 const criarNovoPost = (req, res) => {
@@ -31,6 +30,26 @@ const listarTodosPosts = (req, res) => {
 
 
 // Atualizar
+const editarPost = (req, res) => {
+  const { id } = req.params;
+  const { titulo, conteudo, autor } = req.body;
+
+    if (!titulo || !conteudo || !autor) {
+    return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
+  }
+
+  try {
+    const linhasAfetadas = atualizarPost(id, titulo, conteudo, autor);
+
+    linhasAfetadas
+      ? res.json({ message: 'Post atualizado com sucesso.' })
+      : res.status(404).json({ error: 'Post não encontrado.' });
+
+  } catch (error) {
+    console.error('Erro ao atualizar post:', error.message);
+    res.status(500).json({ error: 'Erro interno ao atualizar post.' });
+  }
+};
 
 // Deletar
 const excluirPost = (req, res) => {
@@ -46,5 +65,6 @@ const excluirPost = (req, res) => {
 module.exports = {
   criarNovoPost
   ,listarTodosPosts
+  ,editarPost
   ,excluirPost
 };
