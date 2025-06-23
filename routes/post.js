@@ -8,7 +8,7 @@ router.post('/', post.criarNovoPost);
 // Método HTTP GET para listar os posts
 router.get('/', post.listarTodosPosts);
 
-// Método HTTP PUT para excluir o post por ID
+// Método HTTP PUT para editar o post por ID
 router.put('/:id', post.editarPost);
 
 // Método HTTP DELETE para excluir o post por ID
