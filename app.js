@@ -1,9 +1,17 @@
+
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const postRoutes = require('./routes/post');
 const db = require('./config/configDB');
 
 const PORT = 3000;
+
+// Permite requisições de qualquer origem (útil em dev)
+app.use(cors());
+
+// Para produção, restringir origem:
+// app.use(cors({ origin: 'https://seusite.com' }))
 
 app.use(express.json());
 
