@@ -1,4 +1,4 @@
-📘 Sobre o Projeto
+## 📘 Sobre o Projeto
 
 Este projeto é uma API de blog desenvolvida como parte da disciplina *Imersão Profissional: Implementação de uma Aplicação*, do curso de **Análise e Desenvolvimento de Sistemas da IERGS Uniasselvi.**
 
